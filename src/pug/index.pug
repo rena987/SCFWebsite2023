@@ -83,12 +83,34 @@ html(lang='en')
 
         // Portfolio Grid
         section#portfolio.page-section.bg-light
-            .container
-                .text-center
-                    h2.section-heading.text-uppercase Directory
-                    h3.section-subheading.text-muted Lorem ipsum dolor sit amet consectetur.
-                .row
-
+                .container
+                    div.totalScreen
+                    div.filtersBox
+                        p Filters
+                        div.typeFilterComponent
+                        p type:
+                        input.blockBoundary(id='frm-type', name='type', required)
+                        div.checkboxComponent
+                        label
+                            input(type='checkbox', class='checkboxBoundary')
+                            span.checkLabel Alphabetical
+                    div.rightColumn
+                        label.searchBox(role='search')
+                        i.searchIcon
+                        input(type='text', placeholder='Search for a startup...')
+                        div.resultsNum 3 results
+                        div.directory
+                        each org in ['Graykea', 'Graykea', 'Graykea']
+                            div.orgCardWrapper
+                            img(src='/GraykeaIcon.jpg', alt='Logo')
+                            div.orgCardRightColumn
+                                div.orgCardTitle= org
+                                div.orgCardDescription Enabling Education Without Financial Burden.
+                                div.orgCardTags
+                                button.myButton Finance
+                                button.myButton Education
+                                div.orgCardTimeSlot
+                                button.myOtherButton Book Time Slot
         // About
         section#about.page-section
             .container
